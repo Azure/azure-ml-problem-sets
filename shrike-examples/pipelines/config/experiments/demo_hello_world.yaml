@@ -7,8 +7,8 @@
 # found in config/aml/, config/compute/ and config/modules
 # usually don't modify this
 defaults:
-  - aml: eyeson # default aml references
-  - compute: eyeson # default compute target names
+  - aml: public_workspace # default aml references
+  - compute: public_workspace # default compute target names
   - modules: module_defaults # list of modules + versions
 
 # run parameters are command line arguments for running your experiment

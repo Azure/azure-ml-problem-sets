@@ -18,7 +18,7 @@ command: >-
 environment:
   docker:
     enabled: true
-    image: mcr.microsoft.com/azureml/base-gpu:openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04 # for eyes-on experiments
+    image: mcr.microsoft.com/azureml/base-gpu:openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04
   conda:
     userManagedDependencies: false
     conda_dependencies_file: component_env.yaml
