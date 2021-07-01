@@ -5,6 +5,8 @@ This document is a proposal of a list of problems to help people learn how to us
 
 ## List of problems
 
+:warning: Note that these problems are meant to be tackled sequentially, as the solution of problem _N+1_ builds upon the solution of problem _N_.
+
 ### Creating, submitting, and validating pipelines
 
 1. Submit a pipeline with a single "Hello, World!"-type component.
