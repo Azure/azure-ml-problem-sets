@@ -14,7 +14,7 @@ This document is a proposal of a list of problems to help people learn how to us
 5. Submit a multi-component pipeline which uses a subgraph.
 6. Submit a pipeline where a component is chosen based on a parameter value.
 7. Re-submit one of the previous pipelines but with a different component version.
-7. Add integration tests to ensure a pipeline does not break.
+8. Add integration tests to ensure a pipeline does not break.
 
 ### Logging
 
