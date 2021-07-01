@@ -20,5 +20,4 @@ This document is a proposal of a list of problems to help people learn how to us
 
 1. Submit a pipeline using the compliant logger to log various properties of the dataset consumed by a component (such as number of records or average of a numerical field, for instance).
 2. Experiment with the different data categories available to the compliant logger.
-3. Experiment with the various options about stack trace prefixing.
-4. Use the stack trace extractor to parse the stack trace in a given log file.
+3. Experiment with the various options about stack trace prefixing (customize the prefix and the exception message, scrub the exception message unless it is in an allowed list).
