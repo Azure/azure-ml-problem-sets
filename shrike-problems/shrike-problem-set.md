@@ -9,7 +9,7 @@ This document is a proposal of a list of problems to help people learn how to us
 
 ### Creating, submitting, and validating pipelines
 
-1. Submit a pipeline with a single "Hello, World!"-type component.
+1. Submit a pipeline with a single "Hello, world!"-type component.
 2. Submit a single-component pipeline where the component operates on a value passed as parameter (pass the parameter value through a config file or via the command line at pipeline submission time).
 3. Submit a single-component pipeline which consumes a dataset (for example count the number of records).
 4. Submit a multi-component pipeline where one component's output is the input of a subsequent component.
