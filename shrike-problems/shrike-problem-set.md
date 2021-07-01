@@ -5,7 +5,7 @@ This document is a proposal of a list of problems to help people learn how to us
 
 ## List of problems
 
-### Creating,submitting, and validating pipelines
+### Creating, submitting, and validating pipelines
 
 1. Submit a pipeline with a single "Hello, World!"-type component.
 2. Submit a single-component pipeline where the component operates on a value passed as parameter (pass the parameter value through a config file or via the command line at pipeline submission time).
