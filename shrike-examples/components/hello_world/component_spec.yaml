@@ -1,0 +1,25 @@
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: helloworldcomponent
+version: 0.0.1
+display_name: HelloWorldComponent
+type: CommandComponent
+description: Demo component that displays "Hello, World!".
+is_deterministic: true
+tags:
+  Office:
+  contact: aml-ds@microsoft.com
+
+inputs: {}
+
+outputs: {}
+
+command: >-
+  python3 run.py
+environment:
+  docker:
+    enabled: true
+    image: mcr.microsoft.com/azureml/base-gpu:openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04 # for eyes-on experiments
+  conda:
+    userManagedDependencies: false
+    conda_dependencies_file: component_env.yaml
+  os: Linux

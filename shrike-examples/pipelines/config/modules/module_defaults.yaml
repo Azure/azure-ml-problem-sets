@@ -1,0 +1,9 @@
+# @package _group_
+# Contains all the demo components with default version
+manifest:
+  # HELLO WORLD COMPONENT
+  - key: "HelloWorldComponent"
+    name: "helloworldcomponent"
+    version: null
+    yaml: "hello_world/component_spec.yaml"
+ 
