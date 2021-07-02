@@ -19,7 +19,7 @@ Open the `pipelines/config/aml/public_workspace.yaml` file and double check that
 
 The `compliant_datastore` name should be the default "workspaceblobstore".
 
-### Prepare the experiment python file
+### Prepare your experiment python file
 In Azure ML, the experiments (_a.k.a. graphs_) are typically defined _via_ code, in what we will call an "experiment python file". We have prepared a stub of this file for you: [demo_hello_world.py](../../shrike-examples/pipelines/experiments/demo_hello_world.py).
 
 Open this file and start scrolling down. In the `HelloWorldDemo` class, you will first find a `build()` function, which first loads the subgraphs and components used in the graph (in our case, a single component). Look for the line below and insert the _component key_ that will control which component to load - you can find the component key in the components dictionary defined in the [module_defaults.yaml](../../shrike-examples/pipelines/config/modules/module_defaults.yaml) file.
