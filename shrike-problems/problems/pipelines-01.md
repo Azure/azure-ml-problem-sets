@@ -53,4 +53,4 @@ To submit your experiment just run the command given at the top of the experimen
 Once your experiment has executed successfully, click on the component, then on "Outputs + logs". In the driver log (usually called "70_driver_log.txt"), look for the "Hello, world!" line. Tadaa!
 
 ### Links to successful execution
-A successful run of the experiment can be found [here](https://ml.azure.com/runs/8043ce8a-5045-4211-9934-1959d5296a48?wsid=/subscriptions/48bbc269-ce89-4f6f-9a12-c6f91fcb772d/resourcegroups/aml1p-rg/workspaces/aml1p-ml-wus2&tid=72f988bf-86f1-41af-91ab-2d7cd011db47), but you likely will not have access to that workspace.
+A successful run of the experiment can be found [here](https://ml.azure.com/runs/8043ce8a-5045-4211-9934-1959d5296a48?wsid=/subscriptions/48bbc269-ce89-4f6f-9a12-c6f91fcb772d/resourcegroups/aml1p-rg/workspaces/aml1p-ml-wus2&tid=72f988bf-86f1-41af-91ab-2d7cd011db47). (This is mostly for internal use, as you likely will not have access to that workspace.)

@@ -6,7 +6,6 @@ type: CommandComponent
 description: Demo component that displays "Hello, World!".
 is_deterministic: true
 tags:
-  Office:
   contact: aml-ds@microsoft.com
 
 inputs: {}
