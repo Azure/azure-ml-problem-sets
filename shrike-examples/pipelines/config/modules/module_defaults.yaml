@@ -6,4 +6,9 @@ manifest:
     name: "helloworldcomponent"
     version: null
     yaml: "hello_world/component_spec.yaml"
+  # COMPONENT THAT OPERATES ON A PARAMETER VALUE
+  - key: "ComponentWithParameter"
+    name: "componentwithparameter"
+    version: null
+    yaml: "add_one_thousand_to_parameter/component_spec.yaml"
  

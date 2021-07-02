@@ -43,7 +43,7 @@ self.apply_recommended_runsettings(
 ```            
 
 ### Configure your experiment
-The various parameters controlling the execution of an experiment can be defined _via_ the command line, or _via_ a _configuration file_
+The various parameters controlling the execution of an experiment can be defined _via_ the command line, or _via_ a _configuration file_.
 Open the experiment configuration file [demo_hello_world.yaml](../../shrike-examples/pipelines/config/experiments/demo_hello_world.yaml) that has already been prepared for you. Adjust the `run.experiment_name` parameter to give your experiment a meaningful name.
 
 ### Submit your experiment
