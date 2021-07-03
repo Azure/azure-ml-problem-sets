@@ -23,8 +23,15 @@ First you need to implement a `get_arg_parser()` method that returns an instance
 #### Implement the `main()` method
 Then, implement the `main()` method to consume your newly introduced parameter. For this exercise, let's just add 1000 to the parameter value, and print both operands and the result.
 
+### Add you component to the component dictionary
+Open the [module_defaults.yaml](../../shrike-examples/pipelines/config/modules/module_defaults.yaml) file and add an entry for the new component following the example of the HelloWorldComponent.
+
+- `key` is how you will retrieve the component later on.
+- `name` must match the name you defined in the component specification.
+- `yaml` is the location of the component specification.
+
 ### Configure your experiment
-The various parameters controlling the execution of an experiment can be defined _via_ the command line, or _via_ a _configuration file_.
+The various parameters controlling the execution of an experiment can be defined _via_ the _command line_, or _via_ a _configuration file_.
 Open the experiment configuration file [demo_component_with_parameter.yaml](../../shrike-examples/pipelines/config/experiments/demo_component_with_parameter.yaml) that has already been prepared for you. Create a new section where you define the parameter value, something like the below.
 
 ```yaml

@@ -11,4 +11,9 @@ manifest:
     name: "componentwithparameter"
     version: null
     yaml: "add_one_thousand_to_parameter/component_spec.yaml"
+  # COMPONENT THAT COUNTS ROWS IN THE INPUT DATASET
+  - key: "CountRows"
+    name: "countrows"
+    version: null
+    yaml: "count_rows/component_spec.yaml"
  
