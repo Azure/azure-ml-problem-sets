@@ -41,7 +41,7 @@ class HelloWorldDemo(AMLPipelineHelper):
         """
 
         # helper functions below load the subgraph/component from registered or local version depending on your config.run.use_local
-        hello_world_component = self.component_load("HelloWorldComponent")
+        hello_world_component = self.component_load("<your-component-key>") # To-Do
 
         # Here you should create an instance of a pipeline function (using your custom config dataclass)
         @dsl.pipeline(
@@ -60,11 +60,9 @@ class HelloWorldDemo(AMLPipelineHelper):
             # component_instance = component_class(input=data, param=value)
             # or
             # subgraph_instance = subgraph_function(input=data, param=value)
-            demo_component_step = hello_world_component()
+            demo_component_step = demo_component_step = name_of_component_loaded_above() # To-Do
 
-            self.apply_recommended_runsettings(
-                "HelloWorldComponent", demo_component_step, gpu=False
-            )
+            self.apply_recommended_runsettings("<your-component-key>", demo_component_step, gpu=False) # To-Do
 
         # finally return the function itself to be built by helper code
         return demo_pipeline_function
