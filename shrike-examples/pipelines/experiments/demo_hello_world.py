@@ -60,7 +60,7 @@ class HelloWorldDemo(AMLPipelineHelper):
             # component_instance = component_class(input=data, param=value)
             # or
             # subgraph_instance = subgraph_function(input=data, param=value)
-            demo_component_step = demo_component_step = name_of_component_loaded_above() # To-Do
+            demo_component_step = <name_of_component_loaded_above()> # To-Do
 
             self.apply_recommended_runsettings("<your-component-key>", demo_component_step, gpu=False) # To-Do
 

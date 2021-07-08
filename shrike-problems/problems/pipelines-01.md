@@ -31,7 +31,7 @@ hello_world_component = self.component_load("<your-component-key>")
 After that, keep scrolling and you will soon encounter the `demo_pipeline_function()` function which actually defines the graph. You can use the `name` and `description` parameters in the decorator to give a meaningful name and description to your graph. After that, we need to instantiate the components making up our graph. In our current, simple case of a 1-component graph, all we need is to instantiate a single step (`demo_component_step`) with the component we just loaded. To do so, just adjust the following line with the name of the component you loaded above.
 
 ```python
-demo_component_step = name_of_component_loaded_above()
+demo_component_step = <name_of_component_loaded_above()>
 ```
 
 Finally, we leverage the `shrike.pipeline` package to apply the proper run parameters (_e.g._ in which compute to run the component). To do so, just call the `apply_recommended_runsettings()` function as shown below, with the same component key you used to load the component; you can see how we specify this component to run on a cpu.

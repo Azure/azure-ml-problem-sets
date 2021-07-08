@@ -15,7 +15,7 @@ To be able to consume a dataset, the main thing you need is, well, a dataset! If
 ## Guidance
 
 ### Prepare your component specification
-Open the [component_spec.yaml](../../shrike-examples/components/count_rows/component_spec.yaml) file in the `components/count_rows` directory. Add an "`input_data`" integer parameter to the `inputs` section following the [CommandComponent documentation](https://componentsdk.azurewebsites.net/components/command_component.html), then add your newly added parameter to the command.
+Open the [component_spec.yaml](../../shrike-examples/components/count_rows/component_spec.yaml) file in the `components/count_rows` directory. Add an "`input_data`" parameter to the `inputs` section following the [CommandComponent documentation](https://componentsdk.azurewebsites.net/components/command_component.html), then add your newly added parameter to the command.
 
 
 ### Prepare your component script
@@ -25,7 +25,7 @@ The command in the component specification tells to run the [run.py](../../shrik
 First you need to implement a `get_arg_parser()` method that returns an instance of the argument parser. If you're not familiar with parsing arguments, the _argparse_ library [documentation](https://docs.python.org/3/library/argparse.html) should help. Here, we will have a single input named `input_data`.
 
 #### Implement the `main()` method
-Then, implement the `main()` method to read the dataset and count the number of rows. The name of the actual file to load depends on which dataset you're using - if you are unsure, just find your dataset in the UI and click "Explore"; it should tell you which files are available. 
+Then, implement the `main()` method to read the dataset, count the number of rows, and print the result. The name of the input dataset is treated as a folder. The name of the actual file(s) to load from that folder depends on which dataset you're using - if you are unsure, just find your dataset in the UI and click "Explore"; it should tell you which files are available. 
 
 After you've read the dataset (feel free to just use a sample if you have chosen a large dataset), count the number of rows and print the result. We suggest you use `pandas` for counting rows. As you can see in the [component_env.yaml](../../shrike-examples/components/count_rows/component_env.yaml) file that defines the environment where the component will run, `pandas` should be available.
 

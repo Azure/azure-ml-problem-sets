@@ -7,10 +7,10 @@ manifest:
     version: null
     yaml: "hello_world/component_spec.yaml"
   # COMPONENT THAT OPERATES ON A PARAMETER VALUE
-  - key: # To-Do
-    name: # To-Do
-    version: null
-    yaml: # To-Do
+  # - key: # To-Do
+  #   name: # To-Do
+  #   version: null
+  #   yaml: # To-Do
   # COMPONENT THAT COUNTS ROWS IN THE INPUT DATASET
   - key: "CountRows"
     name: "countrows"

@@ -9,12 +9,13 @@ tags:
   contact: aml-ds@microsoft.com
 
 inputs:
-  # To-Do
+  # To-Do: define a 'value' parameter
 
 outputs: {}
 
+# To-Do: add newly introduced parameter to the command
 command: >-
-  python3 run.py [--value {inputs.value}]
+  python3 run.py
 environment:
   docker:
     enabled: true
