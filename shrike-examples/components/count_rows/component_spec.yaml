@@ -9,10 +9,7 @@ tags:
   contact: aml-ds@microsoft.com
 
 inputs:
-  input_data:
-    type: AzureMLDataset
-    description: the input data
-    optional: false
+  # To-Do
 
 outputs: {}
 

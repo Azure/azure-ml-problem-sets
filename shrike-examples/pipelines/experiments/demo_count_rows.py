@@ -49,7 +49,7 @@ class CountRowsDemo(AMLPipelineHelper):
             description="The Azure ML demo of a component that reads a dataset and counts the number of rows.",
             default_datastore=config.compute.compliant_datastore,
         )
-        def demo_pipeline_function(demo_dataset):
+        def demo_pipeline_function(): # To-Do (include an input dataset as argument)
             """Pipeline function for this graph.
 
             Args:
@@ -63,7 +63,7 @@ class CountRowsDemo(AMLPipelineHelper):
             # component_instance = component_class(input=data, param=value)
             # or
             # subgraph_instance = subgraph_function(input=data, param=value)
-            demo_component_step = count_rows_component(input_data=demo_dataset)
+            demo_component_step = count_rows_component() # To-Do (include an input dataset as argument)
 
             self.apply_recommended_runsettings(
                 "CountRows", demo_component_step, gpu=False
@@ -87,9 +87,10 @@ class CountRowsDemo(AMLPipelineHelper):
         """
 
         # NOTE: self.dataset_load() helps to load the dataset based on its name and version
+        # To-Do (include an input dataset as argument)
         pipeline_input_dataset = self.dataset_load(
-            name=config.democomponent.input_data,
-            version=config.democomponent.input_data_version,
+            name=<your-dataset-name-from-the-config-file>,
+            version=<your-dataset-version-from-the-config-file>,
         )
 
         # we simply call the pipeline function

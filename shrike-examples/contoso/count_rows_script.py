@@ -17,7 +17,7 @@ def get_arg_parser(parser=None):
     if parser is None:
         parser = argparse.ArgumentParser(description=__doc__)
 
-    parser.add_argument("--input_data", required=True, type=str, help="the input data")
+    # To-Do
 
     return parser
 
@@ -29,17 +29,7 @@ def main():
     args = parser.parse_args()
     args = vars(args)
 
-    # path of the debug dataset
-    print("The input dataset path is: '" + str(args["input_data"]) + "'.")
-
-    # read the dataset
-    df = pd.read_csv(args["input_data"] + "/iris.csv")
-    
-    # count the number of rows
-    num_rows = df.count()[0]
-
-    # print the result
-    print("The dataset contains " + str(num_rows) + " rows.")
+    # To-Do
 
 if __name__ == "__main__":
     main()
