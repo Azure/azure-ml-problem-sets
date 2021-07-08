@@ -14,9 +14,12 @@ is given [here](./shrike-problems/shrike-problem-set.md) in the `shrike-problems
 Detailed instructions for each problem can be found in the `problems` subdirectory
 ([here](./shrike-problems/problems/pipelines-01.md) is the first problem, for instance).
 
-The `shrike-example` directory contains all the files that need to be modified to solve the problems.
+The `shrike-examples` directory contains all the files that need to be modified to solve the problems.
 It is a good example of the recommended repository architecture for Azure ML projects using `shrike`.
 To get started, please follow the instructions of the [ReadMe](/.shrike-examples/ReadMe.md) file located in that directory.
+
+:exclamation: Spoiler Alert :exclamation: The solutions to the problems are available in the [shrike-solutions](https://github.com/Azure/azure-ml-problem-sets/tree/shrike-solutions)
+branch. If you visit this branch, you will see that the files in the `shrike-examples` directory are complete.
 
 ## Contributing
 
