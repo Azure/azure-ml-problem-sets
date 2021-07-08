@@ -41,7 +41,7 @@ democomponent:
 ```
 
 ### Prepare your experiment python file
-Now that your component should be ready and your experiment should be configured properly, let's prepare your experiment python file. The process is very similar to what you did in in the previous problem. The main differences are as follows. 
+Now that your component should be ready and your experiment should be configured properly, let's prepare [your experiment python file](../../shrike-examples/pipelines/experiments/demo_count_rows.py). The process is very similar to what you did in in the previous problem. The main differences are as follows. 
 
 - The pipeline function (`demo_pipeline_function()`) will now take an input dataset as an argument, that you will also need when instantiating the component.
 - In the `pipeline_instance()` function, you will need to load the dataset using the name and version provided in the config file, and pass the loaded dataset to the pipeline function. 

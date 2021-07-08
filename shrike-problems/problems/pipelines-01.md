@@ -34,7 +34,7 @@ After that, keep scrolling and you will soon encounter the `demo_pipeline_functi
 demo_component_step = name_of_component_loaded_above()
 ```
 
-Finally, we leverage the `shrike.pipeline` package to apply the propoer run parameters (_e.g._ in which compute to run the component). To do so, just call the `apply_recommended_runsettings()` function as shown below, with the same component key you used to load the component; you can see how we specify this component to run on a cpu.
+Finally, we leverage the `shrike.pipeline` package to apply the proper run parameters (_e.g._ in which compute to run the component). To do so, just call the `apply_recommended_runsettings()` function as shown below, with the same component key you used to load the component; you can see how we specify this component to run on a cpu.
 
 ```python
 self.apply_recommended_runsettings(

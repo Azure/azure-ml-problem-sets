@@ -28,6 +28,7 @@ Open the [module_defaults.yaml](../../shrike-examples/pipelines/config/modules/m
 
 - `key` is how you will retrieve the component later on.
 - `name` must match the name you defined in the component specification.
+- `version` can be left `null`.
 - `yaml` is the location of the component specification.
 
 ### Configure your experiment
@@ -41,7 +42,7 @@ democomponent:
 ```
 
 ### Prepare your experiment python file
-Now that your component should be ready and your experiment should be configured properly, let's prepare your experiment python file. The process is very similar to what you did in in the previous problem. The only difference is that when you instantiate your component, you will need to provide the parameter value defined in the config file, as demonstrated below.
+Now that your component should be ready and your experiment should be configured properly, let's prepare [your experiment python file](../../shrike-examples/pipelines/experiments/demo_component_with_parameter.py). The process is very similar to what you did in in the previous problem. The only difference is that when you instantiate your component, you will need to provide the parameter value defined in the config file, as demonstrated below.
 
 ```python
 demo_component_step = component_with_parameter(<your-parameter-name> = config.democomponent.<your-parameter-name>)
