@@ -1,2 +1,1 @@
-shrike
 shrike[pipeline]

@@ -1,6 +1,6 @@
 $schema: http://azureml/sdk-2-0/CommandComponent.json
 name: countrows
-version: 0.0.2
+version: 0.0.1
 display_name: CountRows
 type: CommandComponent
 description: Demo component that counts the rows in the input datset.

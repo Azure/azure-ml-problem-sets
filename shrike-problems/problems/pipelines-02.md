@@ -27,7 +27,7 @@ Then, implement the `main()` method to consume your newly introduced parameter. 
 Open the [module_defaults.yaml](../../shrike-examples/pipelines/config/modules/module_defaults.yaml) file and add an entry for the new component following the example of the HelloWorldComponent.
 
 - `key` is how you will retrieve the component later on.
-- `name` must match the name you defined in the component specification.
+- `name` must match the name you defined in the component specification, as it will be used to retrieve the component if you use the remote version.
 - `version` can be left `null`.
 - `yaml` is the location of the component specification.
 
@@ -37,7 +37,7 @@ Open the experiment configuration file [demo_component_with_parameter.yaml](../.
 
 ```yaml
 # DemoComponent config
-democomponent:
+democomponent: # 'democomponent' section name will be used in the experiment python file and in the command line to refer to this set of config parameters
   <your-parameter-name>: 314 # the value on which the component will operate
 ```
 
