@@ -43,5 +43,4 @@ module_loader: # module loading params
   local_steps_folder: "../../../components" # NOTE: run scripts from the `shrike-examples` directory
 
 # DemoComponent config
-democomponent:
-  value: 314 # the value on which the component will operate
+# To-Do

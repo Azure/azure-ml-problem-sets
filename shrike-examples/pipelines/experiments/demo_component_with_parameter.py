@@ -60,7 +60,7 @@ class ComponentWithParameterDemo(AMLPipelineHelper):
             # component_instance = component_class(input=data, param=value)
             # or
             # subgraph_instance = subgraph_function(input=data, param=value)
-            demo_component_step = component_with_parameter(value = config.democomponent.value)
+            demo_component_step = component_with_parameter(<your-parameter-name> = config.democomponent.<your-parameter-name>) # To-Do
 
             self.apply_recommended_runsettings(
                 "ComponentWithParameter", demo_component_step, gpu=False

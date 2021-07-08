@@ -9,11 +9,7 @@ tags:
   contact: aml-ds@microsoft.com
 
 inputs:
-  value:
-    type: Integer
-    description: the value on which we will operate
-    default: 100
-    optional: true
+  # To-Do
 
 outputs: {}
 

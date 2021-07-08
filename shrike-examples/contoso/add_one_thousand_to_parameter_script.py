@@ -16,13 +16,8 @@ def get_arg_parser(parser=None):
     if parser is None:
         parser = argparse.ArgumentParser(description=__doc__)
 
-    parser.add_argument(
-        "--value",
-        required=False,
-        type=int,
-        default=100,
-        help="the value on which we will operate",
-    )
+    # To-Do
+
     return parser
 
 def main():
@@ -33,21 +28,7 @@ def main():
     args = parser.parse_args()
     args = vars(args)
 
-    # this shows a basic operation on the value passed as parameter
-    value = args["value"]
-    operand = 1000
-    result = value + operand
-    print(
-        "The value passed as parameter is: "
-        + str(value)
-        + ". We computed: "
-        + str(value)
-        + " + "
-        + str(operand)
-        + " = "
-        + str(result)
-        + "."
-    )
+    # To-Do
 
 if __name__ == "__main__":
     main()
