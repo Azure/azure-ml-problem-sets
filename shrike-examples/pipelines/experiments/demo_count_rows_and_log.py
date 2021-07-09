@@ -2,7 +2,7 @@
 The Azure ML pipeline for running a basic 'Hello, World!' experiment
 
 to execute:
-> python pipelines/experiments/demo_component_with_parameter.py --config-dir pipelines/config --config-name experiments/demo_component_with_parameter run.submit=True
+> python pipelines/experiments/demo_count_rows_and_log.py --config-dir pipelines/config --config-name experiments/demo_count_rows_and_log run.submit=True
 """
 # pylint: disable=no-member
 # NOTE: because it raises 'dict' has no 'outputs' member in dsl.pipeline construction
@@ -21,7 +21,7 @@ if ACCELERATOR_ROOT_PATH not in sys.path:
     sys.path.append(str(ACCELERATOR_ROOT_PATH))
 
 
-class ComponentWithParameterDemo(AMLPipelineHelper):
+class CountRowsDemo(AMLPipelineHelper):
     """Runnable/reusable pipeline helper class
 
     This class inherits from AMLPipelineHelper which provides
@@ -41,16 +41,19 @@ class ComponentWithParameterDemo(AMLPipelineHelper):
         """
 
         # helper functions below load the subgraph/component from registered or local version depending on your config.run.use_local
-        component_with_parameter = self.component_load("ComponentWithParameter")
+        count_rows_component = self.component_load("CountRowsAndLog")
 
         # Here you should create an instance of a pipeline function (using your custom config dataclass)
         @dsl.pipeline(
-            name="demo-component-with-parameter",
-            description="The Azure ML demo of a component that operates on a parameter value",
+            name="demo-component-count-rows-and-log",
+            description="The Azure ML demo of a component that reads a dataset and counts the number of rows.",
             default_datastore=config.compute.compliant_datastore,
         )
-        def demo_pipeline_function():
+        def demo_pipeline_function(demo_dataset):
             """Pipeline function for this graph.
+
+            Args:
+                demo_dataset: input dataset
 
             Returns:
                 dict[str->PipelineOutputData]: a dictionary of your pipeline outputs
@@ -60,12 +63,10 @@ class ComponentWithParameterDemo(AMLPipelineHelper):
             # component_instance = component_class(input=data, param=value)
             # or
             # subgraph_instance = subgraph_function(input=data, param=value)
-            demo_component_step = component_with_parameter(
-                value=config.democomponent.value
-            )
+            demo_component_step = count_rows_component(input_data=demo_dataset)
 
             self.apply_recommended_runsettings(
-                "ComponentWithParameter", demo_component_step, gpu=False
+                "CountRowsAndLog", demo_component_step, gpu=False
             )
 
         # finally return the function itself to be built by helper code
@@ -85,8 +86,14 @@ class ComponentWithParameterDemo(AMLPipelineHelper):
             azureml.core.Pipeline: the instance constructed with its inputs and params.
         """
 
+        # NOTE: self.dataset_load() helps to load the dataset based on its name and version
+        pipeline_input_dataset = self.dataset_load(
+            name=config.democomponent.input_data,
+            version=config.democomponent.input_data_version,
+        )
+
         # we simply call the pipeline function
-        demo_pipeline = pipeline_function()
+        demo_pipeline = pipeline_function(demo_dataset=pipeline_input_dataset)
 
         # and we return that function so that helper can run it.
         return demo_pipeline
@@ -95,4 +102,4 @@ class ComponentWithParameterDemo(AMLPipelineHelper):
 # NOTE: main block is necessary only if script is intended to be run from command line
 if __name__ == "__main__":
     # calling the helper .main() function
-    ComponentWithParameterDemo.main()
+    CountRowsDemo.main()

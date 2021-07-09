@@ -1,5 +1,8 @@
 import argparse
 import pandas as pd
+import logging
+import shrike
+from shrike.compliant_logging import enable_compliant_logging
 
 
 def get_arg_parser(parser=None):
@@ -31,8 +34,12 @@ def main():
     args = parser.parse_args()
     args = vars(args)
 
+    # initialze logger
+    enable_compliant_logging()
+    logger = logging.getLogger(__name__)
+
     # path of the debug dataset
-    print("The input dataset path is: '" + str(args["input_data"]) + "'.")
+    logger.info("The input dataset path is: '" + str(args["input_data"]) + "'.")
 
     # read the dataset
     df = pd.read_csv(args["input_data"] + "/iris.csv")
@@ -41,7 +48,7 @@ def main():
     num_rows = df.count()[0]
 
     # print the result
-    print("The dataset contains " + str(num_rows) + " rows.")
+    logger.info("The dataset contains " + str(num_rows) + " rows.")
 
 
 if __name__ == "__main__":

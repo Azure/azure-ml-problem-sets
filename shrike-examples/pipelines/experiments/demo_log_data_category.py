@@ -2,7 +2,7 @@
 The Azure ML pipeline for running a basic 'Hello, World!' experiment
 
 to execute:
-> python pipelines/experiments/demo_component_with_parameter.py --config-dir pipelines/config --config-name experiments/demo_component_with_parameter run.submit=True
+> python pipelines/experiments/demo_log_data_category.py --config-dir pipelines/config --config-name experiments/demo_log_data_category run.submit=True
 """
 # pylint: disable=no-member
 # NOTE: because it raises 'dict' has no 'outputs' member in dsl.pipeline construction
@@ -21,7 +21,7 @@ if ACCELERATOR_ROOT_PATH not in sys.path:
     sys.path.append(str(ACCELERATOR_ROOT_PATH))
 
 
-class ComponentWithParameterDemo(AMLPipelineHelper):
+class LogDataCategoryDemo(AMLPipelineHelper):
     """Runnable/reusable pipeline helper class
 
     This class inherits from AMLPipelineHelper which provides
@@ -41,12 +41,12 @@ class ComponentWithParameterDemo(AMLPipelineHelper):
         """
 
         # helper functions below load the subgraph/component from registered or local version depending on your config.run.use_local
-        component_with_parameter = self.component_load("ComponentWithParameter")
+        log_data_category_component = self.component_load("LogDataCategory")
 
         # Here you should create an instance of a pipeline function (using your custom config dataclass)
         @dsl.pipeline(
-            name="demo-component-with-parameter",
-            description="The Azure ML demo of a component that operates on a parameter value",
+            name="demo-log-category",
+            description="The Azure ML demo for data-category-aware-logging",
             default_datastore=config.compute.compliant_datastore,
         )
         def demo_pipeline_function():
@@ -60,12 +60,10 @@ class ComponentWithParameterDemo(AMLPipelineHelper):
             # component_instance = component_class(input=data, param=value)
             # or
             # subgraph_instance = subgraph_function(input=data, param=value)
-            demo_component_step = component_with_parameter(
-                value=config.democomponent.value
-            )
+            demo_component_step = log_data_category_component()
 
             self.apply_recommended_runsettings(
-                "ComponentWithParameter", demo_component_step, gpu=False
+                "LogDataCategory", demo_component_step, gpu=False
             )
 
         # finally return the function itself to be built by helper code
@@ -95,4 +93,4 @@ class ComponentWithParameterDemo(AMLPipelineHelper):
 # NOTE: main block is necessary only if script is intended to be run from command line
 if __name__ == "__main__":
     # calling the helper .main() function
-    ComponentWithParameterDemo.main()
+    LogDataCategoryDemo.main()

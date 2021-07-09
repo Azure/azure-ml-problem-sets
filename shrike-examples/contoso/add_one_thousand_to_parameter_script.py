@@ -1,5 +1,6 @@
 import argparse
 
+
 def get_arg_parser(parser=None):
     """Parse the command line arguments for merge using argparse
 
@@ -25,9 +26,10 @@ def get_arg_parser(parser=None):
     )
     return parser
 
+
 def main():
     """The main function"""
-    
+
     # get the arguments
     parser = get_arg_parser()
     args = parser.parse_args()
@@ -48,6 +50,7 @@ def main():
         + str(result)
         + "."
     )
+
 
 if __name__ == "__main__":
     main()
