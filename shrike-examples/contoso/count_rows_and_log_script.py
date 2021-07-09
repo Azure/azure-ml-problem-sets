@@ -3,7 +3,7 @@ import pandas as pd
 import logging
 import shrike
 from shrike.compliant_logging import enable_compliant_logging
-
+import os
 
 def get_arg_parser(parser=None):
     """Parse the command line arguments for merge using argparse
@@ -49,6 +49,19 @@ def main():
 
     # print the result
     logger.info("The dataset contains " + str(num_rows) + " rows.")
+
+    # get the average file size
+    file_no = 0
+    file_size = 0
+    for path, dirs, files in os.walk(args["input_data"]):
+        for f in files:
+            fp = os.path.join(path, f)
+            file_size += os.path.getsize(fp)
+            file_no += 1
+    logger.info(f"There are {file_no} files in total.")
+    logger.info(f"Total file size is {file_size} bytes.")
+    avg_file_size = file_size / file_no
+    logger.info(f"The average file size is {avg_file_size} bytes.")
 
 
 if __name__ == "__main__":
