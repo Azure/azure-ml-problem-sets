@@ -16,4 +16,18 @@ manifest:
     name: "countrows"
     version: null
     yaml: "count_rows/component_spec.yaml"
- 
+  # COMPONENT THAT COUNTS ROWS IN THE INPUT DATASET WITH COMPLIANT LOGGING
+  - key: "CountRowsAndLog"
+    name: "countrowsandlog"
+    version: null
+    yaml: "count_rows_and_log/component_spec.yaml"
+  # COMPONENT THAT EXPERIMENTS WITH DATA CATEGORY
+  - key: "LogDataCategory"
+    name: "logdatacategorycomponent"
+    version: null
+    yaml: "log_data_category/component_spec.yaml"
+  # COMPONENT THAT USES STACK TRACE PREFIXING
+  - key: "LogStackTracePrefixing"
+    name: "logstacktraceprefixingcomponent"
+    version: null
+    yaml: "log_stack_trace_prefixing/component_spec.yaml" 

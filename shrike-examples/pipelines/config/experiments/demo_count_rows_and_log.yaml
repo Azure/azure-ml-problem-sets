@@ -1,0 +1,48 @@
+# This yaml file configures the hello_world demo experiment
+
+# command for running the pipeline:
+# python pipelines/experiments/demo_count_rows_and_log.py --config-dir pipelines/config --config-name experiments/demo_count_rows_and_log run.submit=True
+
+# defaults contain references of the aml resources
+# found in config/aml/, config/compute/ and config/modules
+# usually don't modify this
+defaults:
+  - aml: public_workspace # default aml references
+  - compute: public_workspace # default compute target names
+  - modules: module_defaults # list of modules + versions
+
+# run parameters are command line arguments for running your experiment
+run: # params for running pipeline
+  experiment_name: "demo_count_rows_and_log" # IMPORTANT
+  regenerate_outputs: false
+  continue_on_failure: false
+  verbose: false
+  submit: false
+  resume: false
+  canary: false
+  silent: false
+  wait: false
+
+# module_loader
+module_loader: # module loading params
+  # IMPORTANT: if you want to modify a given module, add its key here
+  # see the code for identifying the module key
+  # use comma separation in this string to use multiple local modules
+  use_local: "CountRowsAndLog"
+
+  # fix the version of modules in all subgraphs (if left unspecified)
+  # NOTE: use the latest release version to "fix" your branch to a given release
+  # see https://eemo.visualstudio.com/TEE/_release?_a=releases&view=mine&definitionId=76
+  force_default_module_version: null
+
+  # forces ALL module versions to this unique value (even if specified otherwise in code)
+  force_all_module_version: null
+
+  # path to the steps folder, don't modify this one
+  # NOTE: we're working on deprecating this one
+  local_steps_folder: "../../../components" # NOTE: run scripts from the `shrike-examples` directory
+
+# DemoComponent config
+democomponent:
+  input_data: irisdata # the data we'll be working on
+  input_data_version: "latest" # use this to pin a specific version
