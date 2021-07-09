@@ -1,0 +1,19 @@
+# @package _group_
+# Contains all the demo components with default version
+manifest:
+  # HELLO WORLD COMPONENT
+  - key: "HelloWorldComponent"
+    name: "helloworldcomponent"
+    version: null
+    yaml: "hello_world/component_spec.yaml"
+  # COMPONENT THAT OPERATES ON A PARAMETER VALUE
+  # - key: # To-Do
+  #   name: # To-Do
+  #   version: null
+  #   yaml: # To-Do
+  # COMPONENT THAT COUNTS ROWS IN THE INPUT DATASET
+  - key: "CountRows"
+    name: "countrows"
+    version: null
+    yaml: "count_rows/component_spec.yaml"
+ 

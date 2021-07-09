@@ -1,0 +1,6 @@
+# @package _group_
+subscription_id: <your-subscription-id>
+resource_group: <your-resource-group-name>
+workspace_name: <your-workspace-name>
+tenant: <your-tenant-id>
+auth: "interactive"
