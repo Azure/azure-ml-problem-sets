@@ -1,4 +1,4 @@
-# Logging problem 03 - Log dataset properties
+# Logging problem 01 - Log dataset properties
 
 ## Problem statement
 Submit a pipeline using the compliant logger to log various properties of the dataset consumed by a component (such as number of records or average of a numerical field, for instance).
