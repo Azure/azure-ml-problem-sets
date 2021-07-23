@@ -6,7 +6,7 @@ Submit a multi-component pipeline where one component's output is the input of a
 ## Motivation
 The goal of this problem is to get you familiar with how to chain components together, _i.e._ use the output of a component as the input of another downstream component. 
 
-To achieve this, we will be leveraging the `probe` component that can be found in the `components/probe` directory. This component lists various properties of the environment where it is executed (such as the available packages and their versions, the environment variables...), along with the number and size of input files. All this information is written in an output file, which can then be used as the input of another instance of the `probe` component
+To achieve this, we will be leveraging the `probe` component that can be found in the `components/probe` directory. This component lists various properties of the environment where it is executed (such as the available packages and their versions, the environment variables...), along with the number and size of input files. All this information is written in an output file, which can then be used as the input of another instance of the `probe` component.
 
 ## Out of scope
 _Grouping components_ into _subgraphs_ is out of scope for this problem and will be covered in [problem 05](./pipelines-05.md).
@@ -20,7 +20,7 @@ We will keep this problem short and to the point. The `probe` component has alre
 
 ### Configure your experiment
 
-The config file for your experiment [demo_chain_components.yaml](../../shrike-examples/pipelines/config/experiments/demo_chain_components.yaml) has already been prepared. All you need to do is adjust the name of the input dataset to the one available in your workspace
+The config file for your experiment [demo_chain_components.yaml](../../shrike-examples/pipelines/config/experiments/demo_chain_components.yaml) has already been prepared. All you need to do is adjust the name of the input dataset to the one available in your workspace.
 
 ### Prepare your experiment python file
 

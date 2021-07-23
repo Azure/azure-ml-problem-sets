@@ -1,5 +1,5 @@
 """
-The Azure ML pipeline for running a basic 'Hello, World!' experiment
+The Azure ML pipeline for running a basic experiment that counts the rows in a dataset.
 
 to execute:
 > python pipelines/experiments/demo_count_rows.py --config-dir pipelines/config --config-name experiments/demo_count_rows run.submit=True

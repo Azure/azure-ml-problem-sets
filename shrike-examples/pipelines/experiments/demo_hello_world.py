@@ -1,5 +1,5 @@
 """
-The Azure ML pipeline for running a basic 'Hello, World!' experiment
+The Azure ML pipeline for running a basic 'Hello, World!' experiment.
 
 to execute:
 > python pipelines/experiments/demo_hello_world.py --config-dir pipelines/config --config-name experiments/demo_hello_world run.submit=True
