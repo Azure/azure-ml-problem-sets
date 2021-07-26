@@ -40,7 +40,7 @@ Now we are going to prepare the experiment python file, which will call the subg
 
 This is very similar to what you did in the first few problems; the main difference is that instead of creating a graph with a single _component_, you will create a graph with a single _subgraph_.
 
-Open the [demo_subgraph.py](../../shrike-examples/pipelines/experiments/demo_subgraph.py) that has been prepared for you. First , you will want to import the subgraph. If you followed the naming suggestions in the above section, you should need a line like what follows.
+Open the [demo_subgraph.py](../../shrike-examples/pipelines/experiments/demo_subgraph.py) that has been prepared for you. First, you will want to import the subgraph. If you followed the naming suggestions in the above section, you should need a line like what follows.
 
 ```python
 from pipelines.subgraphs.probesubgraph import DemoSubgraph

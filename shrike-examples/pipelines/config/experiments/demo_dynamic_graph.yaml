@@ -1,6 +1,7 @@
-# This yaml file configures the accelerator tutorial pipeline
-# to execute:
-# > python pipelines/experiments/demo_subgraph.py --config-dir pipelines/config --config-name experiments/demo_subgraph run.submit=True
+# This yaml file configures the dynamic graph demo experiment
+
+# command for running the pipeline:
+# python pipelines/experiments/demo_dynamic_graph.py --config-dir pipelines/config --config-name experiments/demo_dynamic_graph run.submit=True
 
 # defaults contain references of the aml resources
 # found in config/aml/, config/compute/ and config/modules
@@ -12,7 +13,7 @@ defaults:
 
 # run parameters are command line arguments for running your experiment
 run: # params for running pipeline
-  experiment_name: "demo_subgraph" # IMPORTANT
+  experiment_name: "demo_dynamic_graph" # IMPORTANT
   regenerate_outputs: false
   continue_on_failure: false
   verbose: false
@@ -27,7 +28,7 @@ module_loader: # module loading params
   # IMPORTANT: if you want to modify a given module, add its key here
   # see the code for identifying the module key
   # use comma separation in this string to use multiple local modules
-  use_local: "probe"
+  use_local: "*"
 
   # fix the version of modules in all subgraphs (if left unspecified)
   # NOTE: use the latest release version to "fix" your branch to a given release
@@ -39,15 +40,13 @@ module_loader: # module loading params
 
   # path to the steps folder, don't modify this one
   # NOTE: we're working on deprecating this one
-  local_steps_folder: "../../../components" # NOTE: run scripts from accelerator-repo
+  local_steps_folder: "../../../components" # NOTE: run scripts from the `shrike-examples` directory
 
-# probe component config
-probesubgraph:
-  input_data: irisdata # the data we'll be working on
-  input_data_version: "latest" # use this to pin a specific version
-  scan_args: true
-  scan_deps: true
-  scan_input: true
-  scan_env_1: true
-  scan_env_2: false
-  verbose: true
+# the parameter that controls which component we'll use
+dynamicgraphparameter:
+  which_component: helloworld
+
+# DemoComponent config
+democomponent:
+  value: 314 # the value on which the demo component will operate
+
