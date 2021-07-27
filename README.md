@@ -1,14 +1,24 @@
 # Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This project gathers a list of problems (and their solutions) to help people ramp up on [Azure ML](https://azure.microsoft.com/en-us/services/machine-learning/).
+The problems are
+divided in two categories: a first set of "generic" problems to get started with Azure ML, and a second set focusing on `shrike`, a [library](https://github.com/Azure/shrike) providing utilities to help create and run experiments on the Azure ML platform. 
 
-As the maintainer of this project, please make a few updates:
+## Generic Azure ML problems
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+## Azure ML problems aimed at learning `shrike`
+
+The list of problems aiming at teaching how to use the `shrike` [library](https://github.com/Azure/shrike)
+is given [here](./shrike-problems/shrike-problem-set.md) in the `shrike-problems` directory.
+Detailed instructions for each problem can be found in the `problems` subdirectory
+([here](./shrike-problems/problems/pipelines-01.md) is the first problem, for instance).
+
+The `shrike-examples` directory contains all the files that need to be modified to solve the problems.
+It is a good example of the recommended repository architecture for Azure ML projects using `shrike`.
+To get started, please follow the instructions of the [ReadMe](/.shrike-examples/ReadMe.md) file located in that directory.
+
+:exclamation: Spoiler Alert :exclamation: The solutions to the problems are available in the [shrike-solutions](https://github.com/Azure/azure-ml-problem-sets/tree/shrike-solutions)
+branch. If you visit this branch, you will see that the files in the `shrike-examples` directory are complete.
 
 ## Contributing
 
