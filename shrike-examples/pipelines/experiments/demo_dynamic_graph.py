@@ -1,8 +1,8 @@
 """
-The Azure ML pipeline for running a basic 'Hello, World!' experiment.
+The Azure ML pipeline for running a basic experiment for which the graph is dynamically generated based on a parameter value.
 
 to execute:
-> python pipelines/experiments/demo_hello_world.py --config-dir pipelines/config --config-name experiments/demo_hello_world run.submit=True
+> python pipelines/experiments/demo_dynamic_graph.py --config-dir pipelines/config --config-name experiments/demo_dynamic_graph run.submit=True
 """
 # pylint: disable=no-member
 # NOTE: because it raises 'dict' has no 'outputs' member in dsl.pipeline construction
@@ -21,7 +21,7 @@ if ACCELERATOR_ROOT_PATH not in sys.path:
     sys.path.append(str(ACCELERATOR_ROOT_PATH))
 
 
-class HelloWorldDemo(AMLPipelineHelper):
+class DynamicGraphDemo(AMLPipelineHelper):
     """Runnable/reusable pipeline helper class
 
     This class inherits from AMLPipelineHelper which provides
@@ -41,12 +41,12 @@ class HelloWorldDemo(AMLPipelineHelper):
         """
 
         # helper functions below load the subgraph/component from registered or local version depending on your config.run.use_local
-        hello_world_component = self.component_load("<your-component-key>") # To-Do
+        # To-Do: load both components
 
         # Here you should create an instance of a pipeline function (using your custom config dataclass)
         @dsl.pipeline(
-            name="demo-hello-world",
-            description="The Azure ML 'Hello, World!' demo",
+            name="demo_dynamic_graph",
+            description="The Azure ML dynamic graph generation demo",
             default_datastore=config.compute.compliant_datastore,
         )
         def demo_pipeline_function():
@@ -60,9 +60,10 @@ class HelloWorldDemo(AMLPipelineHelper):
             # component_instance = component_class(input=data, param=value)
             # or
             # subgraph_instance = subgraph_function(input=data, param=value)
-            demo_component_step = <name_of_component_loaded_above()> # To-Do
 
-            self.apply_recommended_runsettings("<your-component-key>", demo_component_step, gpu=False) # To-Do
+            # To-Do: create a variable containing the parameter value read from the config file
+
+            # To-Do: Write an if block to instantiate two different components based on the above variable's value
 
         # finally return the function itself to be built by helper code
         return demo_pipeline_function
@@ -91,4 +92,4 @@ class HelloWorldDemo(AMLPipelineHelper):
 # NOTE: main block is necessary only if script is intended to be run from command line
 if __name__ == "__main__":
     # calling the helper .main() function
-    HelloWorldDemo.main()
+    DynamicGraphDemo.main()
