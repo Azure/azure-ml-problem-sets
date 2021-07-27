@@ -19,8 +19,6 @@ This document is a proposal of a list of problems to help people learn how to us
 
 ### Logging
 
-:construction: Work in Progress :construction:
-
 - [Logging Problem 01](./problems/logging-01.md) Submit a pipeline using the compliant logger to log various properties of the dataset consumed by a component (such as number of records or average of a numerical field, for instance).
 - [Logging Problem 02](./problems/logging-02.md) Experiment with the different data categories available to the compliant logger.
 - [Logging Problem 03](./problems/logging-03.md) Experiment with the various options about stack trace prefixing (customize the prefix and the exception message, scrub the exception message unless it is in an allowed list).
