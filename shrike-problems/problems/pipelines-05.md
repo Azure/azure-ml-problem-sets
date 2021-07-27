@@ -28,7 +28,7 @@ First we are going to define our subgraph in its own python file. The easiest wa
 
 The first thing you need to do is rename the class. Something like "DemoSubgraph" should be appropriate.
 
-After that, let's deal with the `demo_pipeline_function()` function. First, let's rename it to something like `demosubgraph_pipeline_function`. Then we need to give it arguments (we won't be able to call the config file directly from this function; instead, we will call it from the experiment python file, and will pass the parameters to the subgraph). Just add, after `probe_dataset`, the other arguments that can be found in the "probesubgraph" section of the config file To avoid confusion, rename them by prefixing them with "param_". Give them a default value.
+After that, let's deal with the `demo_pipeline_function()` function. First, let's rename it to something like `demosubgraph_pipeline_function`. Then we need to give it arguments (we won't be able to call the config file directly from this function; instead, we will call it from the experiment python file, and will pass the parameters to the subgraph). Just add, after `probe_dataset`, the other arguments that can be found in the "probesubgraph" section of the config file. To avoid confusion, rename them by prefixing them with "param_". Give them a default value.
 
 Next, when instantiating the 2 components, use your newly added parameters instead of the values from the config file.
 
