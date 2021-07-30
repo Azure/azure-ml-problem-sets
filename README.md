@@ -5,7 +5,6 @@ The problems are
 divided in two categories: a first set of "generic" problems to get started with Azure ML, and a second set focusing on `shrike`, a [library](https://github.com/Azure/shrike) providing utilities to help create and run experiments on the Azure ML platform. 
 
 ## Generic Azure ML problems
-:construction: Work in Progress :construction:
 
 ## Azure ML problems aimed at learning `shrike`
 

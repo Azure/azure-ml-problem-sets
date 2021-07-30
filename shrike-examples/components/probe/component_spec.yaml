@@ -1,0 +1,79 @@
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: probe
+version: 0.0.2
+display_name: Probe
+type: CommandComponent
+description: This component implements probe and debug
+is_deterministic: false
+tags:
+  Office:
+  helpDocument: https://aka.ms/aml/compliant
+  contact: aml-ds-1p-enablers@microsoft.com
+
+inputs:
+  input_data:
+    type: AnyDirectory
+    description: any input data
+    optional: true
+  scan_args:
+    type: Boolean
+    default: true
+    optional: false
+  scan_deps:
+    type: Boolean
+    default: true
+    optional: false
+  scan_input:
+    type: Boolean
+    default: false
+    optional: false
+  scan_env:
+    type: Boolean
+    default: false
+    optional: false
+  scan_nvidia:
+    type: Boolean
+    default: false
+    optional: false
+  scan_output:
+    type: Boolean
+    default: true
+    optional: false
+  verbose:
+    type: Boolean
+    default: false
+    optional: false
+  log_in_aml:
+    type: Boolean
+    default: false
+    optional: false
+  windows_compute:
+    type: Boolean
+    default: false
+    optional: false
+
+outputs:
+  results:
+    type: AnyDirectory
+    description: Local or mount path to output logs.
+
+command: >-
+  python contoso/probe.py 
+  --results {outputs.results}
+  --scan_deps {inputs.scan_deps}
+  --scan_args {inputs.scan_args}
+  --scan_input {inputs.scan_input}
+  --scan_env {inputs.scan_env} 
+  --scan_nvidia {inputs.scan_nvidia}
+  --scan_output {inputs.scan_output}
+  --verbose {inputs.verbose}
+  --log_in_aml {inputs.log_in_aml}
+  --windows_compute {inputs.windows_compute}
+  [--data_path {inputs.input_data}]
+
+environment:
+  docker:
+    image: mcr.microsoft.com/azureml/base-gpu:openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04
+  conda:
+    conda_dependencies_file: component_env.yaml
+  os: Linux
