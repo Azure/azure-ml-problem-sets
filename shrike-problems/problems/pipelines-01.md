@@ -15,7 +15,7 @@ _Component creation_ is out of scope for this problem and will be covered in [pr
 Open the `pipelines/config/aml/public_workspace.yaml` file and update the `subscription_id`, `resource_group`, `workspace_name`, and `tenant` values with those corresponding to your workspace. You can get the first 3 by downloading the config file from the Azure ML UI (click on the workspace name in the top right, then on "Download config file"). You can get the last one (tenant Id) from the workspace URL (which should have a part like "_&tid=\<your-tenant-id\>_").
 
 ### Double check the computes and datastores names
-Open the `pipelines/config/aml/public_workspace.yaml` file and double check that the `default_compute_target`, `linux_cpu_dc_target`, and `linux_cpu_prod_target` point to your cpu cluster (usually named "cpu-cluster" by default, but can be adjusted in this file if your cpu cluster has another name).
+Open the `pipelines/config/compute/public_workspace.yaml` file and double check that the `default_compute_target`, `linux_cpu_dc_target`, and `linux_cpu_prod_target` point to your cpu cluster (usually named "cpu-cluster" by default, but can be adjusted in this file if your cpu cluster has another name).
 
 The `compliant_datastore` name should be the default "workspaceblobstore".
 
