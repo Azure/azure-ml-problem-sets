@@ -17,6 +17,8 @@ Open the `pipelines/config/aml/public_workspace.yaml` file and update the `subsc
 ### Double check the computes and datastores names
 Open the `pipelines/config/compute/public_workspace.yaml` file and double check that the `default_compute_target`, `linux_cpu_dc_target`, and `linux_cpu_prod_target` point to your cpu cluster (usually named "cpu-cluster" by default, but can be adjusted in this file if your cpu cluster has another name).
 
+> If your Azure ML workspace does not have a cpu cluster, you will first need to create one using [these instructions](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-attach-compute-studio#amlcompute). Name it however you like, and use that name in your config file.
+
 The `compliant_datastore` name should be the default "workspaceblobstore".
 
 ### Prepare your experiment python file
