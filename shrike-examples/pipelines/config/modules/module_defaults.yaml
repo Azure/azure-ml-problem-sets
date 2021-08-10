@@ -30,4 +30,9 @@ manifest:
   - key: "LogStackTracePrefixing"
     name: "logstacktraceprefixingcomponent"
     version: null
-    yaml: "log_stack_trace_prefixing/component_spec.yaml" 
+    yaml: "log_stack_trace_prefixing/component_spec.yaml"
+  # PROBE COMPONENT  
+  - key: "probe"
+    name: "probe"
+    version: null
+    yaml: "probe/component_spec.yaml"
