@@ -4,7 +4,7 @@
 Submit a single-component pipeline where the component operates on a value passed as parameter (pass the parameter value through a config file or via the command line at pipeline submission time).
 
 ## Motivation
-The goal of this problem is to get you familiar with how to create components that consumes parameters, and how to set parameter values.
+The goal of this problem is to get you familiar with how to create components that consume parameters, and how to set parameter values.
 
 ## Out of scope
 _Consuming a dataset_ is out of scope for this problem and will be covered in [problem 03](./pipelines-03.md).
@@ -26,10 +26,10 @@ Then, implement the `main()` method to consume your newly introduced parameter. 
 ### Add you component to the component dictionary
 Open the [module_defaults.yaml](../../shrike-examples/pipelines/config/modules/module_defaults.yaml) file and add an entry for the new component following the example of the HelloWorldComponent.
 
-- `key` is how you will retrieve the component later on.
-- `name` must match the name you defined in the component specification, as it will be used to retrieve the component if you use the remote version.
+- `key` is how you will point to the component later on, in the experiment python file or in the command line when deciding which components should use the local version. You can choose any arbitrary value here.
+- `name` must match the name you defined in the component specification file, as it will be used to retrieve the component if you use the remote version.
 - `version` can be left `null`.
-- `yaml` is the location of the component specification.
+- `yaml` is the location of the component specification file.
 
 ### Configure your experiment
 The various parameters controlling the execution of an experiment can be defined _via_ the _command line_, or _via_ a _configuration file_.
