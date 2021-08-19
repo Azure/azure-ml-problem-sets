@@ -61,10 +61,11 @@ class ChainComponentsDemo(AMLPipelineHelper):
                 dict[str->PipelineOutputData]: a dictionary of your pipeline outputs
                     for instance to be consumed by other graphs
             """
-            # general syntax:
-            # module_instance = module_class(input=data, param=value)
-            # or
-            # subgraph_instance = subgraph_function(input=data, param=value)
+
+            N_components = 10
+            probe_components = []
+
+            # let's prepare the first component
             probe_component_step_1 = probe_component(
                 input_data=probe_dataset,
                 scan_args=config.probe1.scan_args,
@@ -74,25 +75,31 @@ class ChainComponentsDemo(AMLPipelineHelper):
                 verbose=config.probe1.verbose,
             )
 
-            self.apply_recommended_runsettings(
-                "probe", probe_component_step_1, gpu=True
-            )
-
-            probe_component_step_2 = probe_component(
-                input_data=probe_component_step_1.outputs.results,  # this is where we pipe the output of the first module to the input of the second module
-                scan_args=config.probe2.scan_args,
-                scan_deps=config.probe2.scan_deps,
-                scan_input=config.probe2.scan_input,
-                scan_env=config.probe2.scan_env,  # here we're using a different parameter
-                verbose=config.probe2.verbose,
-            )
+            probe_components.append(probe_component_step_1)
 
             self.apply_recommended_runsettings(
-                "probe", probe_component_step_2, gpu=True
+                "probe", probe_components[0], gpu=True
             )
+
+
+            for ind in range(1, N_components):
+                probe_components_step_ind = probe_component(
+                    input_data=probe_components[ind - 1].outputs.results,  # this is where we pipe the output of the first module to the input of the second module
+                    scan_args=config.probe2.scan_args,
+                    scan_deps=config.probe2.scan_deps,
+                    scan_input=config.probe2.scan_input,
+                    scan_env=config.probe2.scan_env,  # here we're using a different parameter
+                    verbose=config.probe2.verbose,
+                )
+
+                probe_components.append(probe_components_step_ind)
+
+                self.apply_recommended_runsettings(
+                    "probe", probe_components[ind], gpu=True
+                )
 
             # return {key: output}
-            return {"subgraph_results": probe_component_step_2.outputs.results}
+            return {"subgraph_results": probe_components[N_components - 1].outputs.results}
 
         # finally return the function itself to be built by helper code
         return demo_pipeline_function
