@@ -12,7 +12,7 @@ defaults:
 
 # run parameters are command line arguments for running your experiment
 run: # params for running pipeline
-  experiment_name: "demo_subgraph" # IMPORTANT
+  experiment_name: "demo_subgraph_test_for_loop" # IMPORTANT
   regenerate_outputs: false
   continue_on_failure: false
   verbose: false

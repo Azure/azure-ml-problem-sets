@@ -80,7 +80,10 @@ class DemoGraphWithSubgraph(AMLPipelineHelper):
             # or
             # subgraph_instance = subgraph_function(input=data, param=value)
 
-            probe_subgraph_step = probe_subgraph(
+            N_subgraphs = 3
+            subgraphs = []
+
+            subgraph_1 = probe_subgraph(
                 probe_dataset=probe_dataset,
                 param_scan_args=config.probesubgraph.scan_args,
                 param_scan_deps=config.probesubgraph.scan_deps,
@@ -89,6 +92,24 @@ class DemoGraphWithSubgraph(AMLPipelineHelper):
                 param_scan_env_2=config.probesubgraph.scan_env_2,
                 param_verbose=config.probesubgraph.verbose,
             )
+
+            subgraphs.append(subgraph_1)
+
+            for ind in range(1, N_subgraphs):
+                subgraph = probe_subgraph(
+                    probe_dataset=subgraphs[ind - 1].outputs.subgraph_results,
+                    param_scan_args=config.probesubgraph.scan_args,
+                    param_scan_deps=config.probesubgraph.scan_deps,
+                    param_scan_input=config.probesubgraph.scan_input,
+                    param_scan_env_1=config.probesubgraph.scan_env_1,
+                    param_scan_env_2=config.probesubgraph.scan_env_2,
+                    param_verbose=config.probesubgraph.verbose,
+                )
+
+                subgraphs.append(subgraph)
+
+            return {"subgraph_results": subgraphs[N_subgraphs - 1].outputs.subgraph_results}
+
 
         # finally return the function itself to be built by helper code
         return demo_pipeline_function
