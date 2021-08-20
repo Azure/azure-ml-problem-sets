@@ -51,3 +51,4 @@ probesubgraph:
   scan_env_1: true
   scan_env_2: false
   verbose: true
+  num_subgraphs: 6

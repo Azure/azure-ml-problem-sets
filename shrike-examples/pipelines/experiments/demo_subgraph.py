@@ -80,7 +80,7 @@ class DemoGraphWithSubgraph(AMLPipelineHelper):
             # or
             # subgraph_instance = subgraph_function(input=data, param=value)
 
-            N_subgraphs = 4
+            N_subgraphs = config.probesubgraph.num_subgraphs
             
 
             subgraph_1 = probe_subgraph(
