@@ -41,7 +41,7 @@ class ComponentWithParameterDemo(AMLPipelineHelper):
         """
 
         # helper functions below load the subgraph/component from registered or local version depending on your config.run.use_local
-        component_with_parameter = self.component_load("ComponentWithParameter")
+        component_with_parameter = self.component_load(<your-component-key>)
 
         # Here you should create an instance of a pipeline function (using your custom config dataclass)
         @dsl.pipeline(
